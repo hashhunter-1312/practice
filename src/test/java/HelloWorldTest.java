@@ -1,11 +1,12 @@
-package main.java;
+package test.java;
 
-public class HelloWorld {
-    public static String sayHello() {
-        return "Hello, Jenkins!";
-    }
+import main.java.HelloWorld;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-    public static void main(String[] args) {
-        System.out.println(sayHello());
+public class HelloWorldTest {
+    @Test
+    public void testSayHello() {
+        assertEquals("Hello, Jenkins!", HelloWorld.sayHello());
     }
 }
