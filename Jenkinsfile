@@ -21,8 +21,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building project version ${APP_VERSION}..."
-                // Windows users: use 'bat' instead of 'sh'
-                sh 'mvn clean compile'
+                // Windows uses 'bat' instead of 'sh'
+                bat 'mvn clean compile'
             }
         }
 
@@ -33,7 +33,7 @@ pipeline {
             }
             steps {
                 echo "Running tests..."
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
@@ -46,7 +46,7 @@ pipeline {
             }
             steps {
                 echo "Deploying application version ${APP_VERSION}..."
-                // Here you can add real deploy commands
+                bat 'echo Deploying...'  // Replace with real deploy commands if needed
             }
         }
     }
